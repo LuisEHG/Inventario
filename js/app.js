@@ -124,7 +124,9 @@ function actualizarUI() {
         const costo = parseFloat(p.costo)||0;
         const precio = parseFloat(p.precio)||0;
 
-        inv += stock * costo;
+        const comprados = movimientos.filter(m => String(m.prodId) == String(p.id) && m.tipo == 'entrada')
+                           .reduce((a,b) => a + parseInt(b.cantidad), 0);
+        inv += comprados * costo;
         gan += vendidos * (precio - costo);
 
         sel.innerHTML += `<option value="${p.id}">${p.nombre}</option>`;
@@ -132,7 +134,6 @@ function actualizarUI() {
         tbody.innerHTML += `<tr>
             <td class="fw-bold">${p.nombre}</td>
             <td class="text-center"><span class="badge rounded-pill ${stock<10?'bg-danger':'bg-success'}">${stock}</span></td>
-            <td>S/ ${costo.toFixed(2)}</td>
             <td>S/ ${precio.toFixed(2)}</td>
             <td class="text-end">
                 <button class="btn btn-sm btn-light text-primary" onclick="editarProducto('${p.id}')"><i class="fas fa-pen"></i></button>
