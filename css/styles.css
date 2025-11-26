@@ -71,6 +71,7 @@ body {
 .bg-orange { background: linear-gradient(135deg, #f72585, #b5179e); }
 .bg-purple { background: linear-gradient(135deg, #7209b7, #560bad); }
 .bg-dark-grad { background: linear-gradient(135deg, #343a40, #212529); }
+.bg-green { background: linear-gradient(135deg, #2dd4bf, #14b8a6); }
 
 .module-card h4 { font-weight: 700; font-size: 1.25rem; margin-bottom: 0.5rem; color: #1e293b; }
 .module-card p { font-size: 0.9rem; color: #94a3b8; margin-bottom: 0; line-height: 1.5; }
