@@ -33,10 +33,12 @@ function renderizarProductos(productos) {
 
     productos.forEach(p => {
         const precio = parseFloat(p.precio) || 0;
+        const imageUrl = `img/${p.nombre}.jpeg`;
 
         container.innerHTML += `
             <div class="col-md-4 col-sm-6">
                 <div class="card h-100">
+                    <img src="${imageUrl}" class="card-img-top d-block mx-auto" alt="${p.nombre}" style="height: 200px; object-fit: cover;" onerror="this.style.display='none'">
                     <div class="card-body text-center">
                         <h5 class="card-title">${p.nombre}</h5>
                         <p class="card-text fs-4 fw-bold text-primary">S/ ${precio.toFixed(2)}</p>

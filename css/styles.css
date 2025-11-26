@@ -89,3 +89,14 @@ body {
 .kpi-primary { background: linear-gradient(135deg, #4361ee, #3f37c9); }
 .kpi-success { background: linear-gradient(135deg, #2ec4b6, #4ad66d); }
 .kpi-bg-icon { position: absolute; right: -15px; bottom: -15px; font-size: 6rem; opacity: 0.15; transform: rotate(-10deg); }
+
+/* Catalog Page Layout */
+#catalog-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#catalog-page .main-content {
+    flex: 1;
+}
