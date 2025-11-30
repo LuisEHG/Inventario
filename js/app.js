@@ -13,43 +13,6 @@ window.onload = function() {
 
 // --- SISTEMA DE NAVEGACIÓN ---
 function navegar(vista) {
-    if (vista === 'finanzas') {
-        Swal.fire({
-            title: 'Acceso Restringido',
-            input: 'password',
-            inputPlaceholder: 'Ingresa la contraseña',
-            inputAttributes: {
-                autocapitalize: 'off'
-            },
-            showCancelButton: true,
-            confirmButtonText: 'Acceder',
-            showLoaderOnConfirm: true,
-            preConfirm: (password) => {
-                if (password === 'YaneEdu') {
-                    return true;
-                } else {
-                    Swal.showValidationMessage('Contraseña incorrecta');
-                    return false;
-                }
-            },
-            allowOutsideClick: () => !Swal.isLoading()
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // 1. Ocultar todas las vistas
-                document.querySelectorAll('.view-section').forEach(el => el.classList.add('d-none'));
-                
-                // 2. Mostrar la deseada
-                const target = document.getElementById(`view-${vista}`);
-                if(target) {
-                    target.classList.remove('d-none');
-                    // Efecto visual de scroll arriba
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            }
-        });
-        return; // Detener la navegación normal
-    }
-
     // 1. Ocultar todas las vistas
     document.querySelectorAll('.view-section').forEach(el => el.classList.add('d-none'));
     
